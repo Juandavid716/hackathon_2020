@@ -1,13 +1,352 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Montserrat", sans-serif;
+  color: #212529;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f7f7;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ============ Landing CSS ============ */
+.hero {
+  height: 100vh;
+  width: 100%;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./imgs/mirador.jpg); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fcfcfc;
+  display: flex;
+  background-color: #00b8cc;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.hero-title {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+.hero-text {
+  font-weight: 400;
+  width: 60%;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.green {
+  background-color: #6feb84;
+  color: white;
+}
+.landing-container {
+  width: 80%;
+  margin: 4em auto;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 3em 0;
+}
+
+.cards-container div {
+  width: calc(100% / 3);
+  padding: 1em;
+}
+
+.cards-container .card-link {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  padding: 2em;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.24);
+
+  transition: box-shadow 0.3s ease;
+}
+
+.cards-container .card-link:hover {
+  -webkit-box-shadow: 0px 3px 28px 0px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0px 3px 28px 0px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 3px 28px 0px rgba(0, 0, 0, 0.24);
+}
+
+.card-title {
+  margin: 0 0 0.5em;
+}
+.slider {
+  width: 100%;
+  background-color: #333333;
+  height: 2px;
+  margin-bottom: 1.5em;
+}
+.info-contact {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: center;
+}
+
+.git-father .git-button-1 {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  padding: 1em;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.git-button-1 span {
+  margin: 1em;
+}
+
+.git-father div {
+  width: calc(100% / 3);
+  padding: 1em;
+}
+.git-father {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 2em 0;
+}
+
+/* =============tablas============= */
+
+.tablas {
+  padding-top: 5px;
+  width: 100%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tables-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 20px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.tables-container .tablas-ft {
+  width: calc(100% / 3);
+  padding: 1em;
+}
+
+.tablas-ft table {
+  font-family: inherit;
+}
+
+.table-title {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+td,
+th {
+  border: 1px solid darkgray;
+  padding: 8px;
+  text-align: center;
+}
+
+.tr-table-color:nth-child(even) {
+  background-color: #dddddd;
+}
+#table-prop {
+  font-size: 20px;
+  color: black;
+  font-weight: 600;
+}
+
+/* ============Not found============== */
+
+.not-found {
+  padding-left: 10px;
+}
+
+.not-found h1 {
+  color: red;
+  font-size: 40px;
+}
+
+/* ============================ */
+
+.botones-op {
+  margin: 0 -5px 15px;
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: auto;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  padding: 15px 32px;
+  font-weight: 600;
+  font-family: "Roboto";
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  border-radius: 10px;
+  margin: 0 5px 0;
+}
+
+.adverb-botons {
+  padding-top: 90px;
+  margin-bottom: 0;
+}
+
+.button-verb {
+  background-color: #d1d1d1;
+  margin-top: 10px;
+  display: block;
+  margin: 0 auto;
+  align-self: center;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-verb:hover {
+  background-color: #333;
+  color: white;
+}
+
+.sustantive-container {
+  padding-top: 4em;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.button-notlog {
+  background-color: #212529;
+  color: white;
+  margin: 0 auto;
+}
+
+/* -------------------- */
+.d-flex {
+  display: flex;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.formulario-auth {
+  width: 450px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+#form-title {
+  text-align: center;
+  margin: 0.5em 0 1em;
+}
+
+.box-form {
+  background: rgba(233, 233, 233, 0.5);
+  border-radius: 5px;
+}
+
+.back-img {
+  width: 100%;
+  height: 600px;
+  margin-top: 0;
+  position: relative;
+}
+
+.formulario-auth select {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.auth-div {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  min-height: 660px;
+  /* background-image: url("./imgs/ansgar-scheffold-gGI9zZKMG4g-unsplash.jpg"); */
+  background-size: cover;
+  background-position: center;
+}
+
+.prueba-cambio {
+  height: 150vh;
+}
+
+.formulario-auth label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+.formulario-auth input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .hero-text {
+    width: 80%;
+  }
+
+  .cards-container div {
+    width: calc(100% / 2);
+  }
+
+  .tables-container .tablas-ft {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .botones-op .button {
+    width: 47%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .hero {
+    font-size: 13px;
+  }
+
+  .git-button-1 span {
+    display: block;
+  }
+
+  .cards-container div {
+    width: 100%;
+  }
 }
