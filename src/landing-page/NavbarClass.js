@@ -20,7 +20,7 @@ const NavbarClass = (props) => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
+      <Navbar color="light" light expand="md" fixed="top">
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <img src={Logo} className="nav-img " alt="Logo" />
