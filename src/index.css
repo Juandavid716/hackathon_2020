@@ -26,6 +26,18 @@ body {
   text-align: left;
 }
 
+.secciones {
+  height: 50vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .hero-title {
   font-size: 3em;
   margin-bottom: 0.5em;
@@ -37,14 +49,33 @@ body {
   margin: 0;
   font-size: 1.5em;
 }
+.enunciado {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: auto;
+}
 
+/*  Colors */
 .green {
   background-color: #6feb84;
   color: white;
 }
-.landing-container {
-  width: 80%;
-  margin: 4em auto;
+.black {
+  background-color: #1f1f1f;
+  color: white;
+  font-weight: 400;
+}
+.orange {
+  background-color: #d56d34;
+  color: white;
+}
+.title-enunciado {
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.texto-enunciado {
+  font-size: 16px;
 }
 
 .cards-container {
@@ -58,7 +89,15 @@ body {
   width: calc(100% / 3);
   padding: 1em;
 }
-
+.nav-img {
+  width: 18%;
+  margin-left: 40px;
+  margin-bottom: 2px;
+}
+.nav-img1 {
+  width: 100%;
+  height: 100%;
+}
 .cards-container .card-link {
   width: 100%;
   height: 100%;
@@ -200,14 +239,13 @@ th {
 .button {
   cursor: pointer;
   border: none;
-  padding: 15px 32px;
-  font-weight: 600;
+  padding: 8px 26px;
+  font-weight: 500;
   font-family: "Roboto";
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-
   border-radius: 10px;
   margin: 0 5px 0;
 }
@@ -237,8 +275,18 @@ th {
 }
 
 .container {
-  width: 95%;
+  width: 100%;
+}
+.example {
+  height: 250px;
+  width: 100%;
+  border: 5px solid black;
+  background-color: lightblue;
   margin: 0 auto;
+}
+
+.sidebar {
+  height: 500px;
 }
 
 .button-notlog {

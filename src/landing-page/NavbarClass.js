@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Logo from "../images/logo.png";
 import {
   Collapse,
   Navbar,
@@ -22,11 +23,9 @@ const NavbarClass = (props) => {
       <Navbar color="light" light expand="md">
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="ml-auto " navbar>
-            {/* <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem> */}
+          <img src={Logo} className="nav-img " alt="Logo" />
 
+          <Nav className="ml-auto" navbar>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Nosotros
@@ -39,7 +38,7 @@ const NavbarClass = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
-              <button className="button green" value="Registro">
+              <button className="button black" value="Registro">
                 Registro
               </button>
             </NavItem>
