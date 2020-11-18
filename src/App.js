@@ -6,7 +6,11 @@ import Registro from "./landing-page/Registro";
 import Login from "./landing-page/Login";
 import Comprador from "./landing-page/CompradorTest";
 import InicioProductor from "./landing-page/InicioProductor";
+
 import Perfil from "./landing-page/Perfil";
+
+import NuevoProducto from "./landing-page/NuevoProducto";
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -19,7 +23,9 @@ function App() {
         <Route exact path="/comprador" component={Comprador} />
         <Route exact path="/perfil" component={Perfil} />
         <Route exact path="/" component={Landing} />
-        <Route exact path="/inicioproductor" component={InicioProductor} />
+
+        <Route exact path="/inicioProductor" component={InicioProductor} />
+        <Route exact path="/nuevoProducto" component={NuevoProducto} />
       </Switch>
     </Router>
   );
