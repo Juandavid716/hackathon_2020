@@ -7,8 +7,9 @@ import artesania from "../images/artesania.jpg";
 import Producto from "./Producto";
 import Servicio from "./Servicio";
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux'
 
-function InicioProd() {
+function InicioProd(props) {
   return (
     <div className=" ">
       <div className="titulo-usuario">
@@ -42,6 +43,21 @@ function InicioProd() {
                 descripcion={"Envio gratis Ponedera"}
               ></Producto>
             </div>
+            {props.products.map((item) => {
+              return (<div className="col-lg-2 mt-5">
+                <Producto
+                  className="pb-10"
+                  nombre={item.nombre}
+                  valor={item.valor_unitario}
+                  url={item.images || fondomaiz}
+                  medida={item.unidad_medida}
+                  cantidad={item.cantidad_disponible}
+                  descripcion={item.descripcion}
+                ></Producto>
+              </div>)
+
+
+            })}
             <div className="col-lg-2  mt-5 nuevo-prod">
               <button className="bton-nuevo">
                 <Link to="/nuevoProducto" className="linking-park">+</Link>
@@ -82,5 +98,10 @@ function InicioProd() {
     </div>
   );
 }
-
-export default InicioProd;
+const mapStateToProps = state => ({
+  token: state.token,
+  products: state.products,
+  productsFiltered: state.productsFiltered,
+  encontrado: state.encontrado
+})
+export default connect(mapStateToProps)(InicioProd);
