@@ -70,6 +70,23 @@ body {
   background-color: #d56d34;
   color: white;
 }
+
+.gray {
+}
+
+.myInput {
+  background-image: url("./images/lupa.png"); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  background-size: 20px;
+  border-radius: 20px;
+  width: 50%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
 .title-enunciado {
   font-weight: 600;
   margin-bottom: 30px;
@@ -233,9 +250,10 @@ body {
 /* ============================ */
 
 .botones-op {
-  margin: 0 -5px 15px;
-  display: inline-flex;
-  justify-content: space-between;
+  margin: 50px -5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   max-width: auto;
 }
