@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Search from "./Search";
 import Logo from "../images/logoNaranja.png";
 import fondomaiz from "../images/fondomaiz.jpg";
@@ -6,8 +6,31 @@ import tomato from "../images/tomato.jpg";
 import artesania from "../images/artesania.jpg";
 import Producto from "./Producto";
 import Servicio from "./Servicio";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { setProducts } from '../actions'
 
-function InicioProd() {
+
+import { connect } from 'react-redux'
+
+function InicioProd(props) {
+  useEffect(() => {
+    console.log("hola")
+    if (props.products.length === 0) {
+
+      axios.get("https://hackathonredis.herokuapp.com/products")
+        .then(res => {
+          console.log(res.data.data)
+          props.setProducts(res.data.data)
+        })
+        .catch(e => console.log(e))
+
+
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+
   return (
     <div className=" ">
       <div className="titulo-usuario">
@@ -41,6 +64,27 @@ function InicioProd() {
                 descripcion={"Envio gratis Ponedera"}
               ></Producto>
             </div>
+            {props.products.map((item) => {
+              return (<div className="col-lg-2 mt-5">
+                <Producto
+                  className="pb-10"
+                  nombre={item.nombre}
+                  valor={item.valor_unitario}
+                  url={item.images || fondomaiz}
+                  medida={item.unidad_medida}
+                  cantidad={item.cantidad_disponible}
+                  descripcion={item.descripcion}
+                ></Producto>
+              </div>)
+
+
+            })}
+            <div className="col-lg-2  mt-5 nuevo-prod">
+              <button className="bton-nuevo">
+                <Link to="/nuevoProducto" className="linking-park">+</Link>
+              </button>
+            </div>
+
           </div>
         </div>
         <div className="black">
@@ -75,5 +119,13 @@ function InicioProd() {
     </div>
   );
 }
-
-export default InicioProd;
+const mapStateToProps = state => ({
+  token: state.token,
+  products: state.products,
+  productsFiltered: state.productsFiltered,
+  encontrado: state.encontrado
+})
+const mapDispatchToProps = {
+  setProducts
+}
+export default connect(mapStateToProps, mapDispatchToProps)(InicioProd);
