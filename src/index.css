@@ -232,9 +232,28 @@ body {
 .caja-principal {
   padding-top: 4em;
 }
+.longitud {
+  height: 100vh;
+  width: 100%;
+}
 
 .search-bar {
   padding: 2%;
+}
+.espacio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.color-texto {
+  color: black;
+}
+.titulo-usuario {
+  height: 10em;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* ============Not found============== */
 
@@ -250,7 +269,7 @@ body {
 /* ============================ */
 
 .botones-op {
-  margin: 50px -5px 15px;
+  margin: 10px 10px 15px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
