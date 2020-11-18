@@ -12,7 +12,8 @@ import reducer from './reducers'
 const initialState = {
   token: "",
   products: [],
-  productsFiltered:[]
+  productsFiltered:[],
+  encontrado: true
 
 }
 const composeEnhancer= window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

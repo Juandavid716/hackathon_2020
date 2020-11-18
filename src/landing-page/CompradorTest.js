@@ -73,21 +73,43 @@ function CompradorTest(props) {
       <div className="container mt-5">
         <div className="row">
           {
-            props.products.map((item) => {
-              return (<div className="col-sm-2">
-                <Producto
-                  nombre={item.nombre}
-                  valor={item.valor_unitario}
-                  url={item.images||fondomaiz}
-                  medida={item.unidad_medida}
-                  cantidad={item.cantidad_disponible}
-                  descripcion={item.descripcion}
-                ></Producto>
-              </div>)
+            (props.productsFiltered.length === 0 && props.encontrado === true) ?
+              props.products.map((item) => {
+                return (<div className="col-sm-2">
+                  <Producto
+                    nombre={item.nombre}
+                    valor={item.valor_unitario}
+                    url={item.images || fondomaiz}
+                    medida={item.unidad_medida}
+                    cantidad={item.cantidad_disponible}
+                    descripcion={item.descripcion}
+                  ></Producto>
+                </div>)
 
 
-            })
+              }) :
+              props.productsFiltered.map((item) => {
+                return (<div className="col-sm-2">
+                  <Producto
+                    nombre={item.nombre}
+                    valor={item.valor_unitario}
+                    url={item.images || fondomaiz}
+                    medida={item.unidad_medida}
+                    cantidad={item.cantidad_disponible}
+                    descripcion={item.descripcion}
+                  ></Producto>
+                </div>)
+                
+
+              })
+              
           }
+          {(props.encontrado === false) &&
+              <div>
+                <h1>
+                  Producto no encontrado...
+                </h1>
+              </div>}
         </div>
       </div>
 
@@ -97,7 +119,9 @@ function CompradorTest(props) {
 
 const mapStateToProps = state => ({
   token: state.token,
-  products: state.products
+  products: state.products,
+  productsFiltered: state.productsFiltered,
+  encontrado: state.encontrado
 })
 const mapDispatchToProps = {
   setProducts
