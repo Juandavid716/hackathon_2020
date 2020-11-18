@@ -19,7 +19,7 @@ export default function Registro() {
                 onChange={(e) => setnombre(e.target.value)}
                 id="nombre"
                 name="nombre"
-                className="m-2"
+                className="m-2 inputControl"
                 value={nombre}
                 autoComplete="on"
               />
@@ -28,7 +28,7 @@ export default function Registro() {
                 onChange={(e) => setusuario(e.target.value)}
                 id="usuario"
                 name="usuario"
-                className="m-2"
+                className="m-2 inputControl"
                 value={usuario}
                 autoComplete="on"
               />
@@ -37,7 +37,7 @@ export default function Registro() {
                 onChange={(e) => setcorreo(e.target.value)}
                 id="correo"
                 name="correo"
-                className="m-2"
+                className="m-2 inputControl"
                 value={correo}
                 autoComplete="on"
               />
@@ -47,7 +47,7 @@ export default function Registro() {
                 onChange={(e) => setclave(e.target.value)}
                 id="clave"
                 name="clave"
-                className="m-2"
+                className="m-2 inputControl"
                 value={clave}
                 autoComplete="off"
               />
@@ -57,7 +57,7 @@ export default function Registro() {
                 onChange={(e) => setclaveconfirmar(e.target.value)}
                 id="claveconfirmar"
                 name="claveconfirmar"
-                className="m-2"
+                className="m-2 inputControl"
                 value={claveconfirmar}
                 autoComplete="off"
               />
