@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, Input } from "reactstrap";
+import axios from 'axios';
 
 export default function Registro() {
   const [correo, setcorreo] = useState("");
@@ -7,12 +8,32 @@ export default function Registro() {
   const [nombre, setnombre] = useState("");
   const [usuario, setusuario] = useState("");
   const [claveconfirmar, setclaveconfirmar] = useState("");
+  const registrarse = async e => {
+    e.preventDefault();
+    if (clave !== claveconfirmar) {
+      alert("Las claves no coinciden")
+    } else {
+      const res = await axios.post('https://hackathonredis.herokuapp.com/singup',
+        {
+          name: nombre,
+          username: usuario,
+          password: clave,
+          email: correo
+
+        })
+      if (res === "There was a problem registering your user") {
+        alert("No se pudo registrar, vuelva a intentar")
+      } else {
+        alert("Login exitoso")
+      }
+    }
+  }
   return (
     <div className="fondo">
       <div className="container d-flex justify-content-center align-items-center  pt-5 ">
         <div className="row no-gutters h-100">
           <div className="center-form">
-            <Form className="loginForm">
+            <Form className="loginForm" onSubmit={registrarse}>
               <h1 id="title-login">Registrarse </h1>
               <Input
                 placeholder="Ingrese nombre"
@@ -63,13 +84,13 @@ export default function Registro() {
               />
               <br />
 
-              <button className="button black" value="Registro">
+              <button className="button black" type="submit" value="Registro" >
                 Ingresar
               </button>
             </Form>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
