@@ -1,7 +1,11 @@
 import React from "react";
+import { connect } from 'react-redux'
+import { productsFilter } from '../actions'
 
-export const Search = () => {
-  const handleChange = (e) => {};
+export const Search = (props) => {
+  const handleChange = (e) => {
+    console.log(e)
+  };
 
   return (
     <div className="search-bar caja">
@@ -15,4 +19,12 @@ export const Search = () => {
   );
 };
 
-export default Search;
+
+const mapStateToProps = (state) => ({
+  products: state.products,
+  productsFiltered: state.productsFiltered
+})
+const mapDistpachToProps={
+  productsFilter
+}
+export default connect(mapStateToProps,mapDistpachToProps)(Search);
