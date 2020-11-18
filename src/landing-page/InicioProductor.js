@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Search from "./Search";
 import Logo from "../images/logoNaranja.png";
 import fondomaiz from "../images/fondomaiz.jpg";
@@ -7,9 +7,30 @@ import artesania from "../images/artesania.jpg";
 import Producto from "./Producto";
 import Servicio from "./Servicio";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { setProducts } from '../actions'
+
+
 import { connect } from 'react-redux'
 
 function InicioProd(props) {
+  useEffect(() => {
+    console.log("hola")
+    if (props.products.length === 0) {
+
+      axios.get("https://hackathonredis.herokuapp.com/products")
+        .then(res => {
+          console.log(res.data.data)
+          props.setProducts(res.data.data)
+        })
+        .catch(e => console.log(e))
+
+
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+
   return (
     <div className=" ">
       <div className="titulo-usuario">
@@ -104,4 +125,7 @@ const mapStateToProps = state => ({
   productsFiltered: state.productsFiltered,
   encontrado: state.encontrado
 })
-export default connect(mapStateToProps)(InicioProd);
+const mapDispatchToProps = {
+  setProducts
+}
+export default connect(mapStateToProps, mapDispatchToProps)(InicioProd);
