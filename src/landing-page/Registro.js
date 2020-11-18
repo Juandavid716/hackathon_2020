@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Form, Input, Button } from "reactstrap";
+import { Form, Input } from "reactstrap";
 
-export default function Registro(props) {
+export default function Registro() {
   const [correo, setcorreo] = useState("");
   const [clave, setclave] = useState("");
   const [nombre, setnombre] = useState("");
-  const [apellido, setapellido] = useState("");
+  const [usuario, setusuario] = useState("");
   const [claveconfirmar, setclaveconfirmar] = useState("");
   return (
     <div className="fondo">
@@ -24,12 +24,12 @@ export default function Registro(props) {
                 autoComplete="on"
               />
               <Input
-                placeholder="Ingrese apellido"
-                onChange={(e) => setapellido(e.target.value)}
-                id="apellido"
-                name="apellido"
+                placeholder="Ingrese usuario"
+                onChange={(e) => setusuario(e.target.value)}
+                id="usuario"
+                name="usuario"
                 className="m-2"
-                value={apellido}
+                value={usuario}
                 autoComplete="on"
               />
               <Input

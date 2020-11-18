@@ -201,9 +201,23 @@ body {
 .fondo {
   background-image: url(./images/fondocolombia.jpg);
 }
+.fondo2 {
+  background-image: url(./images/fondomaiz.jpg);
+}
 #title-login {
   color: black;
   font-weight: 400;
+}
+.caja {
+  width: 95%;
+  margin: 0 auto;
+}
+.caja-principal {
+  padding-top: 4em;
+}
+
+.search-bar {
+  padding: 2%;
 }
 /* ============Not found============== */
 

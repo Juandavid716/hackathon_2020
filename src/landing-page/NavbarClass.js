@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Logo from "../images/logo.png";
+
 import {
   Collapse,
   Navbar,
@@ -23,7 +24,9 @@ const NavbarClass = (props) => {
       <Navbar color="light" light expand="md" fixed="top">
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <img src={Logo} className="nav-img " alt="Logo" />
+          <NavLink href="/">
+            <img src={Logo} className="nav-img " alt="Logo" />
+          </NavLink>
 
           <Nav className="ml-auto" navbar>
             <UncontrolledDropdown nav inNavbar>
@@ -38,12 +41,12 @@ const NavbarClass = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
-              <button className="button black" value="Registro">
+              <NavLink href="/registro" className="button ">
                 Registro
-              </button>
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
+              <NavLink href="/login" className="button ">
                 Ingresar
               </NavLink>
             </NavItem>
