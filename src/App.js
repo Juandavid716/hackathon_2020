@@ -5,6 +5,7 @@ import Landing from "./landing-page/Landing";
 import Registro from "./landing-page/Registro";
 import Login from "./landing-page/Login";
 import Comprador from "./landing-page/CompradorTest";
+import InicioProductor from "./landing-page/InicioProductor";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/comprador" component={Comprador} />
         <Route exact path="/" component={Landing} />
+        <Route exact path="/inicioproductor" component={InicioProductor} />
       </Switch>
     </Router>
   );

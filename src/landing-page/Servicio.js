@@ -7,11 +7,9 @@ import {
   CardTitle,
   CardSubtitle,
   Button,
-  NavLink,
 } from "reactstrap";
 
-const Producto = (props) => {
-
+const Servicio = (props) => {
   return (
     <Card>
       <CardImg
@@ -21,18 +19,17 @@ const Producto = (props) => {
         src={props.url}
         alt="Card image cap"
       />
-      <CardBody>
+      <CardBody className="color-texto">
         <CardTitle tag="h5">{props.name}</CardTitle>
         <CardSubtitle tag="h6" className="mb-2 text-muted">
           ${props.valor} x {props.medida}
         </CardSubtitle>
-        <CardText>{props.cantidad}</CardText>
+        <CardText>{props.tiposervicio}</CardText>
+        <CardText>{props.tipocontrato}</CardText>
         <CardText>{props.descripcion}</CardText>
-        <NavLink href="/" className="button ">
-                Ver
-        </NavLink>
+        <Button>Ver</Button>
       </CardBody>
     </Card>
   );
 };
-export default Producto;
+export default Servicio;
