@@ -8,11 +8,10 @@ body {
 }
 
 /* ============ Landing CSS ============ */
-.disponible{
+.disponible {
   margin: 0;
   margin-top: 10px;
 }
-
 
 .hero {
   height: 100vh;
@@ -82,7 +81,8 @@ body {
   color: white;
 }
 
-.gray {}
+.gray {
+}
 
 .imagenes {
   display: flex;
@@ -242,6 +242,10 @@ body {
   background: white;
 }
 
+.black-color {
+  color: black;
+}
+
 .center-form {
   display: flex;
   justify-content: center;
@@ -353,7 +357,7 @@ body {
 .button-form {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #1F1F1F;
+  background: #1f1f1f;
   color: #ffff;
   width: 252px;
   border: 0;

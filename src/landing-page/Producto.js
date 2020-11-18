@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import {
   Card,
   CardImg,
@@ -7,11 +8,9 @@ import {
   CardTitle,
   CardSubtitle,
   Button,
-  NavLink,
 } from "reactstrap";
 
 const Producto = (props) => {
-
   return (
     <Card>
       <CardImg
@@ -26,9 +25,24 @@ const Producto = (props) => {
         <CardSubtitle tag="h6" className="mb-2 text-muted">
           ${props.valor} x {props.medida}
         </CardSubtitle>
-        <CardText><p className="disponible">disponible: </p>{props.cantidad}</CardText>
-        <NavLink href="/" className="button ">
-                Ver
+        <CardText>
+          <p className="disponible">disponible: </p>
+          {props.cantidad}
+        </CardText>
+        <NavLink
+          to={{
+            pathname: "/prodvista",
+            aboutProps: {
+              nombre: props.nombre,
+              valor: props.valor,
+              medida: props.medida,
+              cantidad: props.cantidad,
+              url: props.url,
+              descripcion: props.descripcion,
+            },
+          }}
+        >
+          Ver
         </NavLink>
       </CardBody>
     </Card>
