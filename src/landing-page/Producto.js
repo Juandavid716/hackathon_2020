@@ -26,7 +26,7 @@ const Producto = (props) => {
         <CardSubtitle tag="h6" className="mb-2 text-muted">
           ${props.valor} x {props.medida}
         </CardSubtitle>
-        <CardText>{props.cantidad}</CardText>
+        <CardText><p className="disponible">disponible: </p>{props.cantidad}</CardText>
         <NavLink href="/" className="button ">
                 Ver
         </NavLink>

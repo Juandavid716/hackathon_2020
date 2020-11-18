@@ -8,6 +8,11 @@ body {
 }
 
 /* ============ Landing CSS ============ */
+.disponible{
+  margin: 0;
+  margin-top: 10px;
+}
+
 
 .hero {
   height: 100vh;
