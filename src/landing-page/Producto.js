@@ -22,12 +22,11 @@ const Producto = (props) => {
         alt="Card image cap"
       />
       <CardBody>
-        <CardTitle tag="h5">{props.name}</CardTitle>
+        <CardTitle tag="h5">{props.nombre}</CardTitle>
         <CardSubtitle tag="h6" className="mb-2 text-muted">
           ${props.valor} x {props.medida}
         </CardSubtitle>
         <CardText>{props.cantidad}</CardText>
-        <CardText>{props.descripcion}</CardText>
         <NavLink href="/" className="button ">
                 Ver
         </NavLink>

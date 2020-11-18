@@ -6,3 +6,11 @@ export const setProducts=payload=>({
   type: 'SET_PRODUCT',
   payload
 })
+export const productsFilter=payload=>({
+  type: 'PRODUCTS_FILTER',
+  payload
+})
+export const setEncontrado=payload=>({
+  type: 'SET_ENCONTRADO',
+  payload
+})

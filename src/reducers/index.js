@@ -10,6 +10,16 @@ const reducer = (state, action) => {
         ...state,
         products: action.payload
       }
+    case 'SET_ENCONTRADO':
+      return {
+        ...state,
+        encontrado: action.payload
+      }
+    case 'PRODUCTS_FILTER':
+      return {
+        ...state,
+        productsFiltered: action.payload
+      }
     default:
       return state
   }
