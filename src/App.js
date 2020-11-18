@@ -7,6 +7,7 @@ import Login from "./landing-page/Login";
 import Comprador from "./landing-page/CompradorTest";
 
 import InicioProductor from "./landing-page/InicioProductor";
+import NuevoProducto from "./landing-page/NuevoProducto"
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/" component={Landing} />
 
         <Route exact path="/inicioProductor" component={InicioProductor} />
+        <Route exact path="/NuevoProducto" component={NuevoProducto} />
       </Switch>
     </Router>
   );
