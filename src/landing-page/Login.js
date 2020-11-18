@@ -28,7 +28,6 @@ function Registro(props) {
       .catch(e => console.error("problema fetching data", e));
   }
 
-
   return (
     <div className="fondo2">
       <div className="container d-flex justify-content-center align-items-center  pt-5 ">
