@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search";
 import fondomaiz from "../images/fondomaiz.jpg";
 import tomato from "../images/tomato.jpg";
@@ -6,6 +6,7 @@ import Producto from "./Producto";
 import axios from "axios";
 import { connect } from 'react-redux'
 import Login from './Login'
+import { setProducts } from '../actions'
 function CompradorTest(props) {
   const [access, setAccess] = useState(false);
   let axiosConfig = {
@@ -25,6 +26,22 @@ function CompradorTest(props) {
       setAccess(false)
       console.log("Todo mal", e)
     })
+  useEffect(() => {
+    console.log("hola")
+    if (props.products.length === 0) {
+
+      axios.get("https://hackathonredis.herokuapp.com/products")
+        .then(res => {
+          console.log(res.data.data)
+          props.setProducts(res.data.data)
+        })
+        .catch(e => console.log(e))
+
+
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
 
 
   return (
@@ -58,26 +75,23 @@ function CompradorTest(props) {
           </div>
           <div className="container mt-5">
             <div className="row">
-              <div className="col-sm-2">
-                <Producto
-                  nombre={"Mazorca de Maiz"}
-                  valor={"400"}
-                  url={fondomaiz}
-                  medida={"unidad"}
-                  cantidad={"30"}
-                  descripcion={"Envio gratis Ponedera"}
-                ></Producto>
-              </div>
-              <div className="col-sm-2">
-                <Producto
-                  nombre={"Huevo frito"}
-                  valor={"500"}
-                  url={tomato}
-                  medida={"libra"}
-                  cantidad={"20"}
-                  descripcion={"Envio gratis Ponedera"}
-                ></Producto>
-              </div>
+              {
+                props.products.map((item) => {
+                  return(<div className="col-sm-2">
+                    <Producto
+                      nombre={item.nombre}
+                      valor={item.valor_unitario}
+                      url={fondomaiz}
+                      medida={item.unidad_medida}
+                      cantidad={item.cantidad_disponible}
+                      descripcion={item.descripcion}
+                    ></Producto>
+                  </div>)
+
+
+                })
+
+              }
 
 
             </div>
@@ -91,7 +105,10 @@ function CompradorTest(props) {
 }
 
 const mapStateToProps = state => ({
-  token: state.token
+  token: state.token,
+  products: state.products
 })
-
-export default connect(mapStateToProps)(CompradorTest);
+const mapDispatchToProps = {
+  setProducts
+}
+export default connect(mapStateToProps, mapDispatchToProps)(CompradorTest);

@@ -5,6 +5,11 @@ const reducer = (state, action) => {
         ...state,
         token: action.payload
       }
+    case 'SET_PRODUCT':
+      return {
+        ...state,
+        products: action.payload
+      }
     default:
       return state
   }
