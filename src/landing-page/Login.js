@@ -25,7 +25,7 @@ function Registro(props) {
       if (response.data === "The email doesn't exists") {
         alert("The email doesn't exists")
       } else {
-        if (response.data.auth == false) {
+        if (response.data.auth === false) {
           alert("contraseña incorrecta")
         } else {
           alert("Login exitoso")
