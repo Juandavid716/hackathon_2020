@@ -10,6 +10,7 @@ import UploadImage from "./landing-page/UploadImage";
 import Perfil from "./landing-page/Perfil";
 
 import NuevoProducto from "./landing-page/NuevoProducto";
+import NuevoServicio from "./landing-page/NuevoServicio"
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/upload" component={UploadImage} />
         <Route exact path="/inicioProductor" component={InicioProductor} />
         <Route exact path="/nuevoProducto" component={NuevoProducto} />
+        <Route exact path="/nuevoServicio" component={NuevoServicio} />
       </Switch>
     </Router>
   );
