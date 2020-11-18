@@ -8,6 +8,7 @@ body {
 }
 
 /* ============ Landing CSS ============ */
+
 .hero {
   height: 100vh;
   width: 100%;
@@ -38,6 +39,7 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+
 .hero-title {
   font-size: 3em;
   margin-bottom: 0.5em;
@@ -49,6 +51,7 @@ body {
   margin: 0;
   font-size: 1.5em;
 }
+
 .enunciado {
   display: flex;
   justify-content: flex-end;
@@ -57,40 +60,51 @@ body {
 }
 
 /*  Colors */
+
 .green {
   background-color: #6feb84;
   color: white;
 }
+
 .black {
   background-color: #000000;
   color: white;
   font-weight: 400;
 }
+
 .orange {
   background-color: #d56d34;
   color: white;
 }
 
-.gray {
-}
+.gray {}
 
 .myInput {
-  background-image: url("./images/lupa.png"); /* Add a search icon to input */
-  background-position: 10px 12px; /* Position the search icon */
-  background-repeat: no-repeat; /* Do not repeat the icon image */
+  background-image: url("./images/lupa.png");
+  /* Add a search icon to input */
+  background-position: 10px 12px;
+  /* Position the search icon */
+  background-repeat: no-repeat;
+  /* Do not repeat the icon image */
   background-size: 20px;
   border-radius: 20px;
-  width: 50%; /* Full-width */
-  font-size: 16px; /* Increase font-size */
-  padding: 12px 20px 12px 40px; /* Add some padding */
-  border: 1px solid #ddd; /* Add a grey border */
-  margin-bottom: 12px; /* Add some space below the input */
+  width: 50%;
+  /* Full-width */
+  font-size: 16px;
+  /* Increase font-size */
+  padding: 12px 20px 12px 40px;
+  /* Add some padding */
+  border: 1px solid #ddd;
+  /* Add a grey border */
+  margin-bottom: 12px;
+  /* Add some space below the input */
 }
 
 .title-enunciado {
   font-weight: 600;
   margin-bottom: 30px;
 }
+
 .texto-enunciado {
   font-size: 16px;
 }
@@ -106,15 +120,18 @@ body {
   width: calc(100% / 3);
   padding: 1em;
 }
+
 .nav-img {
   width: 18%;
   margin-left: 40px;
   margin-bottom: 2px;
 }
+
 .nav-img1 {
   width: 100%;
   height: 100%;
 }
+
 .cards-container .card-link {
   width: 100%;
   height: 100%;
@@ -127,7 +144,6 @@ body {
   -webkit-box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.24);
   -moz-box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.24);
   box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.24);
-
   transition: box-shadow 0.3s ease;
 }
 
@@ -140,12 +156,14 @@ body {
 .card-title {
   margin: 0 0 0.5em;
 }
+
 .slider {
   width: 100%;
   background-color: #333333;
   height: 2px;
   margin-bottom: 1.5em;
 }
+
 .info-contact {
   padding-top: 2%;
   padding-bottom: 2%;
@@ -171,16 +189,20 @@ body {
   width: calc(100% / 3);
   padding: 1em;
 }
+
 .git-father {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 2em 0;
 }
+
 .fixed {
   background-attachment: fixed;
 }
+
 /* =============contacto============= */
+
 .contacto {
   height: 20em;
   margin: 2em 0 4em;
@@ -193,7 +215,9 @@ body {
   width: 50px;
   height: 50px;
 }
+
 /* Log in */
+
 .loginForm {
   max-width: 400px;
   align-items: center;
@@ -215,27 +239,56 @@ body {
   align-items: center;
   height: 100vh;
 }
+
 .fondo {
   background-image: url(./images/fondocolombia.jpg);
 }
+
 .fondo2 {
   background-image: url(./images/fondomaiz.jpg);
 }
+
 #title-login {
   color: black;
   font-weight: 400;
 }
+
 .caja {
   width: 95%;
   margin: 0 auto;
 }
+
 .caja-principal {
   padding-top: 4em;
+}
+
+.longitud {
+  height: 100vh;
+  width: 100%;
 }
 
 .search-bar {
   padding: 2%;
 }
+
+.espacio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-texto {
+  color: black;
+}
+
+.titulo-usuario {
+  height: 10em;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* ============Not found============== */
 
 .not-found {
@@ -250,7 +303,7 @@ body {
 /* ============================ */
 
 .botones-op {
-  margin: 50px -5px 15px;
+  margin: 10px 10px 15px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -270,6 +323,55 @@ body {
   font-size: 16px;
   border-radius: 10px;
   margin: 0 5px 0;
+}
+
+.txt-newProd {
+  font-size: 20px;
+  font-weight: bold;
+  color: #767575;
+}
+
+.tarjeta-newProd {
+  border-radius: 10px;
+  box-shadow: 0 0 2px 0#767575, 0 2px 2px 0 #767575;
+}
+
+#input-descrip {
+  height: 200px;
+  align-items: flex-start;
+}
+
+.button-form {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #1F1F1F;
+  color: #ffff;
+  width: 252px;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  border-radius: 40px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.foto {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.input-newProd {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
 .adverb-botons {
@@ -299,6 +401,7 @@ body {
 .container {
   width: 100%;
 }
+
 .example {
   height: 250px;
   width: 100%;
@@ -318,6 +421,7 @@ body {
 }
 
 /* -------------------- */
+
 .d-flex {
   display: flex;
 }
@@ -390,11 +494,9 @@ body {
   .hero-text {
     width: 80%;
   }
-
   .cards-container div {
     width: calc(100% / 2);
   }
-
   .tables-container .tablas-ft {
     width: 100%;
   }
@@ -411,11 +513,9 @@ body {
   .hero {
     font-size: 13px;
   }
-
   .git-button-1 span {
     display: block;
   }
-
   .cards-container div {
     width: 100%;
   }
