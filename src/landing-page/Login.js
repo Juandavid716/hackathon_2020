@@ -12,18 +12,28 @@ function Registro(props) {
   const handleLogin = async (event) => {
     event.preventDefault()
     if (!usuario) {
-      console.log("debe digitar usuario")
+      alert("debe digitar usuario")
     }
     if (!clave) {
-      console.log("debe digitar clave")
+      alert("debe digitar clave")
     }
     await axios.post("https://hackathonredis.herokuapp.com/singin", {
       username: usuario,
       password: clave
     }).then(response => {
       console.log(props.setToken(response.data.token))
-      
-      props.history.push("/comprador")
+      if (response.data === "The email doesn't exists") {
+        alert("The email doesn't exists")
+      } else {
+        if (response.data.auth == false) {
+          alert("contraseña incorrecta")
+        } else {
+          alert("Login exitoso")
+          props.history.push("/comprador")
+        }
+      }
+
+
     })
       .catch(e => console.error("problema fetching data", e));
   }
