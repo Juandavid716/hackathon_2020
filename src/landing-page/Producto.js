@@ -7,9 +7,11 @@ import {
   CardTitle,
   CardSubtitle,
   Button,
+  NavLink,
 } from "reactstrap";
 
 const Producto = (props) => {
+
   return (
     <Card>
       <CardImg
@@ -26,7 +28,9 @@ const Producto = (props) => {
         </CardSubtitle>
         <CardText>{props.cantidad}</CardText>
         <CardText>{props.descripcion}</CardText>
-        <Button>Ver</Button>
+        <NavLink href="/" className="button ">
+                Ver
+        </NavLink>
       </CardBody>
     </Card>
   );
