@@ -79,6 +79,10 @@ body {
 
 .gray {}
 
+.imagenes {
+  display: flex;
+}
+
 .myInput {
   background-image: url("./images/lupa.png");
   /* Add a search icon to input */
@@ -359,6 +363,15 @@ body {
   width: 100px;
   height: 100px;
   margin-right: 10px;
+}
+
+.uploadBot {
+  width: 100px;
+  height: 50px;
+  margin-right: 10px;
+  background-color: #fcfcfc;
+  color: #000000;
+  box-shadow: 0 0 2px 0#767575, 0 2px 2px 0 #767575;
 }
 
 .input-newProd {

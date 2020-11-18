@@ -41,7 +41,7 @@ const UploadImage = () => {
   console.log("image: ", image);
 
   return (
-    <div>
+    <div  className="container mt-5 pt-5" >
       <progress value={progress} max="100" />
       <br />
       <br />

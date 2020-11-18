@@ -1,8 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
+import { storage } from "../firebase";
 
 
 function NuevoServicio() {
+    const [image, setImage] = useState(null);
+    const [url, setUrl] = useState("");
+    const [progress, setProgress] = useState(0);
 
+    const handleChange = (e) => {
+        if (e.target.files[0]) {
+            setImage(e.target.files[0]);
+        }
+    };
+
+    const handleUpload = () => {
+        const uploadTask = storage.ref(`images/${image.name}`).put(image);
+        uploadTask.on(
+            "state_changed",
+            (snapshot) => {
+                const progress = Math.round(
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                );
+                setProgress(progress);
+            },
+            (error) => {
+                console.log(error);
+            },
+            () => {
+                storage
+                    .ref("images")
+                    .child(image.name)
+                    .getDownloadURL()
+                    .then((url) => {
+                        setUrl(url);
+                        alert(url)
+                    });
+            }
+        );
+    };
+
+    console.log("image: ", image);
 
     return (
         <div className="container mt-5 pt-5" >
@@ -48,18 +85,22 @@ function NuevoServicio() {
                             <input type="text" className="input-newProd" id="input-descrip" placeholder="Ejemplo: Se hace mantenimiento de todo tipo de sistema de riego " />
                         </div>
                     </div>
-                    <div className="row justify-content-center mb-5">
-                        <button className="foto ">
-                            <h1 className="txt-newProd"></h1>
-                        </button>
-                        <button className="foto ">
-                            <h1 className="txt-newProd"></h1>
-                        </button>
-                    </div>
                     <div className="row justify-content-center mb-3">
                         <button className="button-form">Publicar</button>
                     </div>
                 </form>
+                <div className="row justify-content-around mb-5">
+                    <div className="imagenes row">
+                        <progress value={progress} max="100" />
+                        <input type="file" onChange={handleChange} />
+                    </div>
+
+                </div>
+                <div className="row justify-content-center mb-5">
+                    <button className="button-form uploadBot" onClick={handleUpload}>Upload</button>
+                    <img className="foto" src={url || "http://via.placeholder.com/300"} alt="firebase-image" />
+                </div>
+
             </div>
         </div>
     );
