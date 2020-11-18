@@ -28,8 +28,13 @@ function Registro(props) {
         if (response.data.auth === false) {
           alert("contraseña incorrecta")
         } else {
-          alert("Login exitoso")
-          props.history.push("/comprador")
+          alert("Login exitoso")         
+          if (response.data.userType == "0") {
+            props.history.push("/comprador")
+          } else {
+            props.history.push("/inicioProductor")
+          }
+
         }
       }
 
