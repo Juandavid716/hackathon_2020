@@ -6,7 +6,7 @@ import Registro from "./landing-page/Registro";
 import Login from "./landing-page/Login";
 import Comprador from "./landing-page/CompradorTest";
 import InicioProductor from "./landing-page/InicioProductor";
-
+import UploadImage from "./landing-page/UploadImage";
 import Perfil from "./landing-page/Perfil";
 
 import NuevoProducto from "./landing-page/NuevoProducto";
@@ -23,7 +23,7 @@ function App() {
         <Route exact path="/comprador" component={Comprador} />
         <Route exact path="/perfil" component={Perfil} />
         <Route exact path="/" component={Landing} />
-
+        <Route exact path="/upload" component={UploadImage} />
         <Route exact path="/inicioProductor" component={InicioProductor} />
         <Route exact path="/nuevoProducto" component={NuevoProducto} />
       </Switch>
