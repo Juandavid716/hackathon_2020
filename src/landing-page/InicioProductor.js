@@ -6,6 +6,7 @@ import tomato from "../images/tomato.jpg";
 import artesania from "../images/artesania.jpg";
 import Producto from "./Producto";
 import Servicio from "./Servicio";
+import { Link } from "react-router-dom";
 
 function InicioProd() {
   return (
@@ -41,6 +42,12 @@ function InicioProd() {
                 descripcion={"Envio gratis Ponedera"}
               ></Producto>
             </div>
+            <div className="col-lg-2  mt-5 nuevo-prod">
+              <button className="bton-nuevo">
+                <Link to="/nuevoProducto" className="linking-park">+</Link>
+              </button>
+            </div>
+
           </div>
         </div>
         <div className="black">
